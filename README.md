@@ -3,7 +3,7 @@
 Sovereign-LILA-E8: Geometric Transformer GPT
 World's first Neural Network with E8 Root System Geometry Attention.
 
-> ### **Loss dropped from 9.5 → 0.43 in 200000 steps** all on a free Colab GPU!
+> ### **Loss dropped from 9.5 → 0.37 in 156,000 steps** all on a free Colab GPU!
 
  [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SPUTNIKAI/sovereign-lila-e8/blob/main/notebooks/demo.ipynb)
 
@@ -157,8 +157,12 @@ While classical transformers (e.g., NanoGPT) rely on brute statistical force and
 *Lila-E8-Transformer* is an experimental deep learning model that explores the integration of a fundamental mathematical structure, namely the symmetries of the E8 root system, into the transformer architecture. Unlike traditional models relying solely on statistical correlations, E8-Transformer aims to leverage deep geometric principles to create more efficient, interpretable, and resource-saving language models. This approach aims to develop the concept of "geometric consciousness" in AI, where language understanding occurs through structural and symmetrical relationships.
 
 
+<img src="https://raw.githubusercontent.com/SPUTNIKAI/sovereign-lila-e8/refs/heads/main/figures/loss_curve_1.png" alt="Loss plot" width="600"/>
+<img src="https://raw.githubusercontent.com/SPUTNIKAI/sovereign-lila-e8/refs/heads/main/figures/LOSS_LILA_E8.png" alt="Loss screenshot" width="600"/>
+
+
 ## 🔬 Key Results
-- Training progress: After 170,000+ steps on a single free Colab GPU, the model achieved a validation loss of 0.35–0.45, significantly lower than typical TinyStories baselines (which plateau around 1.0–1.5). More importantly, continued to decrease over 200k steps – there is no overfitting despite the long training.
+- Training progress: After 200,000 steps on a single free Colab GPU, the model achieved a validation loss of 0.35–0.45, significantly lower than typical TinyStories baselines (which plateau around 1.0–1.5). More importantly, continued to decrease over 200k steps – there is no overfitting despite the long training.
 
 - Context extrapolation: Although trained on sequences of 512 tokens, Lila can generate coherent text up to 1500 tokens. Beyond the training window, the model gracefully degrades (meaning gradually fades into less coherent output) instead of entering hard repetitive loops – a direct benefit of the geometric inductive bias.
 
@@ -187,7 +191,7 @@ While classical transformers (e.g., NanoGPT) rely on brute statistical force and
 |--------------------|------------|----------------|-----------------------|------------------------------|
 | GPT‑2 Small        | 124M       | ~unknown       | ~3.0 (perplexity)     | degrades, can loop           |
 | TinyStories‑33M    | 33M (60M*) | ~20k           | >1.0                   | hard loops after 300–500     |
-| **Lila (ours)**    | **40M**    | **200k+**      | **0.35–0.45**          | **graceful decay to 1500**   |
+| **LILA (ours)**    | **40M**    | **200k+**      | **0.35–0.45**          | **graceful decay to 1500**   |
 *\*Microsoft baseline has ~60M actual parameters including embeddings*
 
 
