@@ -1,0 +1,14 @@
+# Core (train + inference)
+torch>=2.0.0
+sentencepiece
+datasets
+requests
+
+# Analysis и визуализация (analysis/, source_model)
+#numpy
+#pandas
+#matplotlib
+#seaborn
+#tqdm
+# Опционально: CLI для скачивания весов с Google Drive (gdown <file_id>)
+#gdown
