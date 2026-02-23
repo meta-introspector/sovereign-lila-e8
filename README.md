@@ -200,6 +200,7 @@ While classical transformers (e.g., NanoGPT) rely on brute statistical force and
 | GPT‑2 Small        | 124M       | ~unknown       | ~3.0 (perplexity)     | degrades, can loop           |
 | TinyStories‑33M    | 33M (60M*) | ~20k           | >1.0                   | hard loops after 300–500     |
 | **LILA (ours)**    | **40M**    | **200k+**      | **0.35–0.45**          | **graceful decay to 1500**   |
+
 *\*Microsoft baseline has ~60M actual parameters including embeddings*
 
 
