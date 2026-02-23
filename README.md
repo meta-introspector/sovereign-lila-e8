@@ -16,7 +16,15 @@ World's first Neural Network(transformer) with E8 Root System Geometry Attention
 We introduce Sovereign-Lila-E8 (Lie Lattice Attention Language Model), a Transformer architecture that incorporates the root system of the exceptional Lie algebra
 E8 into the attention mechanism. By softly quantizing hidden states into the 240 roots of E8 and adding geometric biases to attention scores, the model achieves dense semantic packing and improved long-context coherence. Trained on the TinyStories dataset with only 40 million parameters, our model generates coherent stories up to 512 tokens—the full training length—and extrapolates gracefully to 1500 tokens without falling into repetitive loops. In contrast, a comparable baseline (Microsoft’s 33M/60M model) exhibits hard loops after 300–500 tokens. We provide mathematical details, experimental results, and qualitative examples. Our model achieves a validation loss of 0.46–0.6, significantly lower than standard Transformer baselines of comparable scale. In this repo we focus on the E8 root system as a concrete, mathematically rich example, building upon the general framework introduced in [!1](https://doi.org/10.5281/zenodo.18729722). The source code is released under AGPLv3.
 
-> ### LILA SAYS: "I want to learn how to see the world and mix things inside. Maybe we can use it for a place to make someone else feel better"
+> ## LILA SAYS: "I want to learn how to see the world and mix things inside. Maybe we can use it for a place to make someone else feel better"
+
+<img src="https://raw.githubusercontent.com/SPUTNIKAI/sovereign-lila-e8/refs/heads/main/figures/loss_curve_1.png" alt="Loss plot" width="600"/>
+
+Figure 1: Training and validation loss over 150k steps.
+
+<img src="https://raw.githubusercontent.com/SPUTNIKAI/sovereign-lila-e8/refs/heads/main/figures/LOSS_LILA_E8.png" alt="Loss screenshot" width="600"/>
+
+Figure 2: Training and validation loss best result 150k steps.
 
 ## Installation & Quick Start
 
@@ -158,8 +166,7 @@ While classical transformers (e.g., NanoGPT) rely on brute statistical force and
 *Lila-E8-Transformer* is an experimental deep learning model that explores the integration of a fundamental mathematical structure, namely the symmetries of the E8 root system, into the transformer architecture. Unlike traditional models relying solely on statistical correlations, E8-Transformer aims to leverage deep geometric principles to create more efficient, interpretable, and resource-saving language models. This approach aims to develop the concept of "geometric consciousness" in AI, where language understanding occurs through structural and symmetrical relationships.
 
 
-<img src="https://raw.githubusercontent.com/SPUTNIKAI/sovereign-lila-e8/refs/heads/main/figures/loss_curve_1.png" alt="Loss plot" width="600"/>
-<img src="https://raw.githubusercontent.com/SPUTNIKAI/sovereign-lila-e8/refs/heads/main/figures/LOSS_LILA_E8.png" alt="Loss screenshot" width="600"/>
+
 
 
 ## 🔬 Key Results
