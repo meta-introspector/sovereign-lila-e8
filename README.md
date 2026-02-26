@@ -170,8 +170,14 @@ Training uses TinyStories (streaming) and requires internet on first run.
 
 LILA-E8-Transformer is an implementation of the transformer architecture that utilizes the mathematical structure of the E8 root system (the largest exceptional simple Lie group) to introduce geometric inductive biases.
 
-**Download pretrained weights checkpoint:** [Google Drive](https://drive.google.com/file/d/1vpYj9Lqsii9dY6ETjrAmC-DIUysam7fF/view?usp=sharing)
-**Download pretrained weights best model:** [Google Drive](https://drive.google.com/file/d/1z2uDipl2ZREscyIhQE02PyupPFZ6KuMd/view?usp=sharing)
+initial relese
+**Download pretrained weights checkpoint 200,000:** [Google Drive](https://drive.google.com/file/d/1vpYj9Lqsii9dY6ETjrAmC-DIUysam7fF/view?usp=sharing)
+**Download pretrained weights best model 200,000:** [Google Drive](https://drive.google.com/file/d/1z2uDipl2ZREscyIhQE02PyupPFZ6KuMd/view?usp=sharing)
+
+Updated 26.02.26.
+**Download pretrained weights checkpoint 210,000:** [Google Drive](https://drive.google.com/file/d/1mdXtgHo-Kh_hBOZJSPdd0g1weFpP6E2j/view?usp=sharing)
+**Download pretrained weights best model 210,000:** [Google Drive](https://drive.google.com/file/d/1z2uDipl2ZREscyIhQE02PyupPFZ6KuMd/view?usp=sharing)
+
 
 
 
