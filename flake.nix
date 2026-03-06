@@ -13,6 +13,11 @@
         config.allowUnfree = true;
       };
       
+      torch-wheel = pkgs.fetchurl {
+        url = "https://download.pytorch.org/whl/cu121/torch-2.5.1%2Bcu121-cp313-cp313-linux_x86_64.whl";
+        sha256 = "0jzxdwymh0wmqykw00jg71gww8a6z31ncyi5hf9vxy8gkfviizhv";
+      };
+      
     in
     {
       packages.${system}.default = pkgs.python3Packages.buildPythonPackage rec {
@@ -38,14 +43,28 @@
       
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [
+          python3
           cudaPackages.cudatoolkit
           cudaPackages.cudnn
         ];
         
         shellHook = ''
-          export LD_LIBRARY_PATH=${pkgs.cudaPackages.cudatoolkit}/lib:${pkgs.cudaPackages.cudnn}/lib:$LD_LIBRARY_PATH
+          export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath [
+            pkgs.zlib
+            pkgs.stdenv.cc.cc
+            pkgs.cudaPackages.cudatoolkit
+            pkgs.cudaPackages.cudnn
+          ]}:$LD_LIBRARY_PATH
           export CUDA_PATH=${pkgs.cudaPackages.cudatoolkit}
-          source /mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/bin/activate
+          
+          if [ ! -d .venv ]; then
+            python -m venv .venv
+            source .venv/bin/activate
+            pip install torch --index-url https://download.pytorch.org/whl/cu121
+            pip install sentencepiece datasets requests
+          else
+            source .venv/bin/activate
+          fi
         '';
       };
     };
