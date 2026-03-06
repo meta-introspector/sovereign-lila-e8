@@ -1,0 +1,127 @@
+60% > ! cd /mnt/data1/time-2026/03-march/04/sovereign-lila-e8 && ./train_spool.sh
+
+3. Neural Spinfoam Networks: The Quantum Geometry of Attention
+
+Training LiLa-E8 on spool data via Nix...
+warning: ignoring the client-specified setting 'stalled-download-timeout', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'stalled-download-timeout', because it is a restricted setting and you are not a trusted user
+warning: ignoring the client-specified setting 'stalled-download-timeout', because it is a restricted setting and you are not a trusted user
+🔄 Загружен чекпоинт: шаг 12000, loss 1.5572
+Step 12200: loss 1.0538
+Step 12400: loss 1.0383
+Step 12600: loss 1.0317
+Step 12800: loss 1.6913
+Step 13000: loss 1.1554
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_13000.pt (loss=1.1554)
+Step 13200: loss 1.3753
+Step 13400: loss 0.8095
+Step 13600: loss 1.4138
+Step 13800: loss 1.5489
+Step 14000: loss 1.2915
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_14000.pt (loss=1.2915)
+Step 14200: loss 1.2082
+Step 14400: loss 1.0988
+Step 14600: loss 1.1991
+Step 14800: loss 1.2133
+Step 15000: loss 0.6631
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_15000.pt (loss=0.6631)
+Step 15200: loss 1.3327
+Step 15400: loss 1.6767
+Step 15600: loss 1.5157
+Step 15800: loss 0.8647
+Step 16000: loss 1.3090
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_16000.pt (loss=1.3090)
+Step 16200: loss 1.6840
+Step 16400: loss 0.9316
+Step 16600: loss 1.0426
+Step 16800: loss 0.8024
+Step 17000: loss 1.0764
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_17000.pt (loss=1.0764)
+Step 17200: loss 1.0730
+Step 17400: loss 0.7432
+Step 17600: loss 1.3840
+Step 17800: loss 0.6737
+Step 18000: loss 0.9932
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_18000.pt (loss=0.9932)
+Step 18200: loss 1.0275
+Step 18400: loss 0.7193
+Step 18600: loss 0.8756
+Step 18800: loss 0.6791
+Step 19000: loss 0.8622
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_19000.pt (loss=0.8622)
+Step 19200: loss 0.9087
+Step 19400: loss 0.9877
+Step 19600: loss 1.0655
+Step 19800: loss 1.2162
+Step 20000: loss 1.1354
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_20000.pt (loss=1.1354)
+Step 20200: loss 1.0789
+Step 20400: loss 1.0505
+Step 20600: loss 0.7552
+Step 20800: loss 0.8854
+Step 21000: loss 0.9096
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_21000.pt (loss=0.9096)
+Step 21200: loss 1.0389
+Step 21400: loss 0.8344
+Step 21600: loss 0.7904
+Step 21800: loss 0.9956
+Step 22000: loss 0.8256
+💾 Чекпоинт сохранён: checkpoints_spool/checkpoint_step_22000.pt (loss=0.8256)
+Step 22200: loss 0.6561
+Step 22400: loss 0.9461
+Traceback (most recent call last):
+  File "/mnt/data1/time-2026/03-march/04/sovereign-lila-e8/scripts/train_model.py", line 15, in <module>
+    train(checkpoint_dir=args.checkpoint_dir, resume=args.resume)
+  File "/mnt/data1/time-2026/03-march/04/sovereign-lila-e8/training/train.py", line 39, in train
+    train_iter, _ = create_train_val_iterators()  # пересоздаём
+  File "/mnt/data1/time-2026/03-march/04/sovereign-lila-e8/data_utils/streaming_dataset.py", line 57, in create_train_val_iterators
+    train_dataset = load_dataset("roneneldan/TinyStories", streaming=True, split="train")
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/datasets/load.py", line 1485, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/datasets/load.py", line 1130, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/datasets/load.py", line 1029, in dataset_module_factory
+    raise e1 from None
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/datasets/load.py", line 982, in dataset_module_factory
+    api.hf_hub_download(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 5720, in hf_hub_download
+    return hf_hub_download(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 986, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1119, in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1653, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1576, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 685, in _httpx_follow_relative_redirects_with_backoff
+    response = http_backoff(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 559, in http_backoff
+    return next(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 467, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+Self exited with status: exit status: 1
+60% > it broke?
