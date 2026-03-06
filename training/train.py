@@ -29,7 +29,7 @@ def train(checkpoint_dir="checkpoints", resume=True):
     block_size = cfg.block_size
     total_steps = 150000
     log_every = 200
-    save_every = 1000
+    save_every = 2000  # Spaced out to save disk
     gen_every = 1000
 
     model.train()
