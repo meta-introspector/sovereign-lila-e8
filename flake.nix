@@ -51,20 +51,13 @@
         shellHook = ''
           export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath [
             pkgs.zlib
-            pkgs.stdenv.cc.cc
             pkgs.cudaPackages.cudatoolkit
             pkgs.cudaPackages.cudnn
           ]}:$LD_LIBRARY_PATH
           export CUDA_PATH=${pkgs.cudaPackages.cudatoolkit}
           
-          if [ ! -d .venv ]; then
-            python -m venv .venv
-            source .venv/bin/activate
-            pip install torch --index-url https://download.pytorch.org/whl/cu121
-            pip install sentencepiece datasets requests
-          else
-            source .venv/bin/activate
-          fi
+          # Use the working venv
+          source /mnt/data1/time-2026/03-march/05/ubuntu-pytorch-test/venv/bin/activate
         '';
       };
     };
