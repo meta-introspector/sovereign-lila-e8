@@ -36,6 +36,7 @@ def load_latest_checkpoint(model, optimizer, checkpoint_dir, device):
     latest_step = max(steps)
     latest_file = f'checkpoint_step_{latest_step}.pt'
     path = os.path.join(checkpoint_dir, latest_file)
+    print(f'📂 Loading checkpoint: {path}')
     checkpoint = torch.load(path, map_location=device, weights_only=False)
     model.load_state_dict(checkpoint['model_state_dict'])
     if optimizer is not None:
