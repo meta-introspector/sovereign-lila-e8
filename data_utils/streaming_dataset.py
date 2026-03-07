@@ -70,34 +70,34 @@ def create_train_val_iterators():
         print("⚠️  No preprocessed dataset. Run: cd preprocessor && cargo run --release")
         print("   Falling back to slow file-by-file loading...")
         filelist_path = Path("spool_filelist.json")
-    
-    # Load from cached filelist if exists
-    if filelist_path.exists():
-        print(f"📂 Loading cached filelist from {filelist_path}")
-        with open(filelist_path) as f:
-            file_paths = json.load(f)
-        print(f"✅ Loaded {len(file_paths)} files from cache")
-    else:
-        print("⚠️  No cached filelist found. Run: python scripts/build_spool_filelist.py")
-        print("   Falling back to scanning (this will be slow)...")
-        file_paths = []
-        extensions = ["*.txt", "*.md", "*.rs", "*.py", "*.lean", "*.nix", "*.toml", "*.el", "*.sh"]
-        for path in [Path("/mnt/data1/spool"), Path.home() / "DOCS"]:
-            if path.exists():
-                for ext in extensions:
-                    file_paths.extend([str(f) for f in path.rglob(ext)])
-    
-    texts = []
-    print(f"📖 Reading file contents...")
-    for i, fpath in enumerate(file_paths):
-        if i % 1000 == 0:
-            print(f"   Progress: {i}/{len(file_paths)}")
-        try:
-            text = Path(fpath).read_text()[:2000]
-            if len(text) > 50:
-                texts.append({'text': text})
-        except:
-            pass
+        
+        # Load from cached filelist if exists
+        if filelist_path.exists():
+            print(f"📂 Loading cached filelist from {filelist_path}")
+            with open(filelist_path) as f:
+                file_paths = json.load(f)
+            print(f"✅ Loaded {len(file_paths)} files from cache")
+        else:
+            print("⚠️  No cached filelist found. Run: python scripts/build_spool_filelist.py")
+            print("   Falling back to scanning (this will be slow)...")
+            file_paths = []
+            extensions = ["*.txt", "*.md", "*.rs", "*.py", "*.lean", "*.nix", "*.toml", "*.el", "*.sh"]
+            for path in [Path("/mnt/data1/spool"), Path.home() / "DOCS"]:
+                if path.exists():
+                    for ext in extensions:
+                        file_paths.extend([str(f) for f in path.rglob(ext)])
+        
+        texts = []
+        print(f"📖 Reading file contents...")
+        for i, fpath in enumerate(file_paths):
+            if i % 1000 == 0:
+                print(f"   Progress: {i}/{len(file_paths)}")
+            try:
+                text = Path(fpath).read_text()[:2000]
+                if len(text) > 50:
+                    texts.append({'text': text})
+            except:
+                pass
     
     # Split 90/10 train/val
     split_idx = int(len(texts) * 0.9)

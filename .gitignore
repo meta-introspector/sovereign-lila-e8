@@ -182,3 +182,4 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 .cursorrules
+spool_filelist.json
