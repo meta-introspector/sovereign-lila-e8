@@ -57,7 +57,19 @@ def create_train_val_iterators():
     from pathlib import Path
     import json
     
-    filelist_path = Path("spool_filelist.json")
+    dataset_path = Path("spool_dataset.json")
+    
+    # Load preprocessed dataset (instant)
+    if dataset_path.exists():
+        print(f"⚡ Loading preprocessed dataset from {dataset_path}")
+        with open(dataset_path) as f:
+            texts = json.load(f)
+        print(f"✅ Loaded {len(texts)} documents instantly")
+    else:
+        # Fallback to slow loading
+        print("⚠️  No preprocessed dataset. Run: cd preprocessor && cargo run --release")
+        print("   Falling back to slow file-by-file loading...")
+        filelist_path = Path("spool_filelist.json")
     
     # Load from cached filelist if exists
     if filelist_path.exists():
